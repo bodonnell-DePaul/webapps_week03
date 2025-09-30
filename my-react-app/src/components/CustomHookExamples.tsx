@@ -52,6 +52,12 @@ const useFetch = <T,>(url: string) => {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         
+        // Check if the response is actually JSON
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+          throw new Error('Response is not JSON');
+        }
+        
         // Convert response to JSON
         const result = await response.json();
         
@@ -209,15 +215,15 @@ const CustomHookExamples: React.FC = () => {
   /*
     USING GENERIC HOOKS:
     
-    useFetch<{name: string; value: number}>('/api/example')
+    useFetch<{name: string; value: number}>('https://jsonplaceholder.typicode.com/todos/1')
     
-    Here we specify that T = {name: string; value: number}
+    Here we specify that T = {userId: number; id: number; title: string; completed: boolean}
     This means:
-    - data will be {name: string; value: number} | null
-    - TypeScript will ensure we only access .name and .value on data
+    - data will be {userId: number; id: number; title: string; completed: boolean} | null
+    - TypeScript will ensure we only access these properties on data
     - We get autocomplete and error checking!
   */
-  const { data, loading, error } = useFetch<{name: string; value: number}>('/api/example');
+  const { data, loading, error } = useFetch<{userId: number; id: number; title: string; completed: boolean}>('https://jsonplaceholder.typicode.com/todos/1');
   
   /*
     USING useLocalStorage WITH OBJECT TYPE:
@@ -257,7 +263,18 @@ const CustomHookExamples: React.FC = () => {
           - null: replacer function (we don't need one)
           - 2: number of spaces for indentation (makes it readable)
         */}
-        <pre>{JSON.stringify(data, null, 2)}</pre>
+        {data && (
+          <div>
+            <p>Title: {data.title}</p>
+            <p>User ID: {data.userId}</p>
+            <p>ID: {data.id}</p>
+            <p>Completed: {data.completed ? 'Yes' : 'No'}</p>
+            <details>
+              <summary>Raw JSON</summary>
+              <pre>{JSON.stringify(data, null, 2)}</pre>
+            </details>
+          </div>
+        )}
       </div>
 
       <div className="section">
