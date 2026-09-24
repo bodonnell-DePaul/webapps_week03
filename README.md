@@ -3,6 +3,28 @@
 
 ---
 
+## Full Interactive Demo
+
+**`full-react-demo` is the maintained classroom sample for this repository.**
+It replaces the retired `my-react-app`, `react_calculator`, and `week2_demo` apps.
+
+[full-react-demo](full-react-demo/README.md) brings the ten-topic classroom app
+from [Spring-2026-CSC360-Week2](https://github.com/bodonnell-DePaul/Spring-2026-CSC360-Week2/tree/main/demo/full-react-demo)
+into this repository. It includes working component, form, effect, context,
+memoization, and shopping-cart examples, plus a local data-fetching fixture.
+No separate backend is required.
+
+```sh
+cd full-react-demo
+npm ci
+npm run dev -- --host 127.0.0.1 --port 5176 --strictPort
+```
+
+Open **http://127.0.0.1:5176/** in the integrated browser. See the demo's README
+for its upstream source, local adjustments, and production build commands.
+
+---
+
 ## Table of Contents
 1. [Introduction to React](#introduction-to-react)
 2. [Setting Up Your Development Environment](#setting-up-your-development-environment)
