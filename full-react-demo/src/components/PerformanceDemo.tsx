@@ -55,7 +55,7 @@ const PerformanceDemo: React.FC = () => {
     <div>
       <h2>8. Performance (memo, useMemo, useCallback)</h2>
 
-      <section className="demo-card">
+      <section id="performance-memo-child" className="demo-card">
         <h3>React.memo — Prevent Unnecessary Child Re-renders</h3>
         <p className="explanation">
           Increment the counter below. Notice that <strong>ExpensiveChild</strong>
@@ -70,7 +70,7 @@ const PerformanceDemo: React.FC = () => {
         {selectedItem && <p>Last clicked: <strong>{selectedItem}</strong></p>}
       </section>
 
-      <section className="demo-card">
+      <section id="performance-calculation" className="demo-card">
         <h3>useMemo — Cache Expensive Calculations</h3>
         <p className="explanation">
           Fibonacci of <strong>{count}</strong> = <strong>{fibonacci}</strong>.

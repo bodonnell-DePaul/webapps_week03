@@ -128,7 +128,7 @@ const ContextDemo: React.FC = () => {
       <h2>7. Context API (Global State)</h2>
 
       {/* Auth context */}
-      <section className="demo-card">
+      <section id="context-auth" className="demo-card">
         <h3>Auth Context</h3>
         <p className="explanation">
           <code>useAuth()</code> provides login state to any component in the
@@ -138,7 +138,7 @@ const ContextDemo: React.FC = () => {
       </section>
 
       {/* Theme context */}
-      <section className="demo-card">
+      <section id="context-theme" className="demo-card">
         <h3>Theme Context</h3>
         <p className="explanation">
           <code>useTheme()</code> provides the current theme and a toggle
@@ -148,7 +148,7 @@ const ContextDemo: React.FC = () => {
       </section>
 
       {/* Notification context */}
-      <section className="demo-card">
+      <section id="context-notifications" className="demo-card">
         <h3>Notification Context</h3>
         <p className="explanation">
           <code>useNotifications()</code> lets any component fire a toast

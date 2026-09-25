@@ -92,7 +92,7 @@ const UseMemoDemo: React.FC = () => {
       <h2>9. useMemo — Caching Expensive Computations</h2>
 
       {/* Fibonacci */}
-      <section className="demo-card">
+      <section id="usememo-fibonacci" className="demo-card">
         <h3>Expensive Calculation: Fibonacci</h3>
         <p className="explanation">
           The Fibonacci function is intentionally slow (recursive with no cache).
@@ -126,7 +126,7 @@ const UseMemoDemo: React.FC = () => {
       </section>
 
       {/* Product filter */}
-      <section className="demo-card">
+      <section id="usememo-products" className="demo-card">
         <h3>Filtered Product List</h3>
         <p className="explanation">
           Filtering, sorting, and computing statistics are all wrapped in

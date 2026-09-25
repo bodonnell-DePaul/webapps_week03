@@ -83,7 +83,7 @@ const PropsDemo: React.FC = () => {
       <h2>2. Props &amp; TypeScript Interfaces</h2>
 
       {/* Basic props */}
-      <section className="demo-card">
+      <section id="props-defaults" className="demo-card">
         <h3>Basic Props with Defaults</h3>
         <p className="explanation">
           Each <code>&lt;Greeting&gt;</code> receives different props.
@@ -97,7 +97,7 @@ const PropsDemo: React.FC = () => {
       </section>
 
       {/* Callback props */}
-      <section className="demo-card">
+      <section id="props-callbacks" className="demo-card">
         <h3>Callback Props (Parent ↔ Child Communication)</h3>
         <p className="explanation">
           Parent passes <code>onEdit</code> and <code>onDelete</code> functions
@@ -121,7 +121,7 @@ const PropsDemo: React.FC = () => {
       </section>
 
       {/* Generic list component */}
-      <section className="demo-card">
+      <section id="props-generic-list" className="demo-card">
         <h3>Generic List Component (TypeScript Generics)</h3>
         <p className="explanation">
           <code>GenericList&lt;T&gt;</code> works with any data type.

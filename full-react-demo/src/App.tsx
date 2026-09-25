@@ -4,7 +4,7 @@
 // click through each topic section during class.
 // ============================================================
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { AuthProvider } from './context/AuthContext';
 import { NotificationProvider } from './context/NotificationContext';
@@ -19,27 +19,63 @@ import ContextDemo from './components/ContextDemo';
 import PerformanceDemo from './components/PerformanceDemo';
 import UseMemoDemo from './components/UseMemoDemo';
 import UseReducerDemo from './components/UseReducerDemo';
+import { demoHash, demoSectionId, demoTabs, parseDemoHash } from './demo-navigation';
 
 import './App.css';
 
-const tabs = [
-  { id: 'components', label: '1. Components & TSX' },
-  { id: 'props', label: '2. Props' },
-  { id: 'state', label: '3. State' },
-  { id: 'events', label: '4. Events' },
-  { id: 'effects', label: '5. useEffect' },
-  { id: 'hooks', label: '6. Custom Hooks' },
-  { id: 'context', label: '7. Context API' },
-  { id: 'performance', label: '8. Performance' },
-  { id: 'usememo', label: '9. useMemo' },
-  { id: 'usereducer', label: '10. useReducer' },
-] as const;
-
-type TabId = (typeof tabs)[number]['id'];
-
 const AppContent: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<TabId>('components');
+  const [route, setRoute] = useState(() => parseDemoHash(window.location.hash));
+  const activeTab = route.tab;
   const { theme } = useTheme();
+  const tabBar = useRef<HTMLElement>(null);
+  const mainContent = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const updateRoute = () => setRoute(parseDemoHash(window.location.hash));
+    window.addEventListener('hashchange', updateRoute);
+    return () => window.removeEventListener('hashchange', updateRoute);
+  }, []);
+
+  useEffect(() => {
+    const navigation = tabBar.current;
+    const main = mainContent.current;
+    if (!navigation || !main) return;
+    const updateOffset = () => {
+      main.style.setProperty('--demo-nav-height', `${navigation.getBoundingClientRect().height}px`);
+      const selected = document.activeElement;
+      if (selected instanceof HTMLElement && selected.classList.contains('demo-linked-example')) {
+        selected.scrollIntoView({ block: 'start', behavior: 'auto' });
+      }
+    };
+    updateOffset();
+    const observer = new ResizeObserver(updateOffset);
+    observer.observe(navigation);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!window.location.hash.startsWith('#/')) return;
+    const id = demoSectionId(route);
+    const target = id ? document.getElementById(id) : mainContent.current;
+    if (!target) {
+      console.error(`The linked demo section could not be found: ${id}`);
+      return;
+    }
+    const frame = requestAnimationFrame(() => {
+      const navigation = tabBar.current;
+      if (navigation) {
+        mainContent.current?.style.setProperty('--demo-nav-height', `${navigation.getBoundingClientRect().height}px`);
+      }
+      target.setAttribute('tabindex', '-1');
+      target.classList.toggle('demo-linked-example', Boolean(id));
+      target.scrollIntoView({ block: 'start', behavior: 'auto' });
+      target.focus({ preventScroll: true });
+    });
+    return () => {
+      cancelAnimationFrame(frame);
+      target.classList.remove('demo-linked-example');
+    };
+  }, [route]);
 
   const renderTab = () => {
     switch (activeTab) {
@@ -63,19 +99,21 @@ const AppContent: React.FC = () => {
         <p className="subtitle">Interactive showcase of every concept from the Week 02 notes</p>
       </header>
 
-      <nav className="tab-bar">
-        {tabs.map(tab => (
+      <nav className="tab-bar" ref={tabBar} aria-label="Demo topics">
+        {demoTabs.map(tab => (
           <button
             key={tab.id}
             className={`tab-btn ${activeTab === tab.id ? 'active' : ''}`}
-            onClick={() => setActiveTab(tab.id)}
+            aria-pressed={activeTab === tab.id}
+            onClick={() => { window.location.hash = demoHash(tab.id); }}
           >
             {tab.label}
           </button>
         ))}
       </nav>
 
-      <main className="main-content">
+      <main className="main-content" ref={mainContent} tabIndex={-1}>
+        {route.problem && <p className="demo-route-problem" role="status">{route.problem}</p>}
         {renderTab()}
       </main>
 

@@ -104,7 +104,7 @@ const UseReducerDemo: React.FC = () => {
       <h2>10. useReducer — Complex State Management</h2>
 
       {/* Explanation */}
-      <section className="demo-card">
+      <section id="usereducer-overview" className="demo-card">
         <h3>Why useReducer?</h3>
         <p className="explanation">
           <code>useReducer</code> is ideal when state transitions are complex or
@@ -122,7 +122,7 @@ const UseReducerDemo: React.FC = () => {
       </section>
 
       {/* Product catalog */}
-      <section className="demo-card">
+      <section id="usereducer-catalog" className="demo-card">
         <h3>Product Catalog</h3>
         <p className="explanation">
           Click <strong>Add to Cart</strong> to dispatch an <code>ADD_ITEM</code> action.
@@ -161,7 +161,7 @@ const UseReducerDemo: React.FC = () => {
       </section>
 
       {/* Cart */}
-      <section className="demo-card">
+      <section id="usereducer-cart" className="demo-card">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <h3>🛒 Cart ({summary.totalItems} items)</h3>
           <button className="btn btn-small" onClick={() => dispatch({ type: 'TOGGLE_CART' })}>
