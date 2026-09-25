@@ -59,6 +59,15 @@ for its upstream source, local adjustments, and production build commands.
 
 ---
 
+## Homework Assignment
+
+[Evidence Before Action](homework/README.md) is the one-week, client-side React
+and TypeScript assignment. The student handout includes the data contract,
+local CSV datasets, and an example deliverable video. Students may use a
+different visual design while meeting the documented functional requirements.
+
+---
+
 ## Table of Contents
 1. [Introduction to React](#introduction-to-react)
 2. [Setting Up Your Development Environment](#setting-up-your-development-environment)

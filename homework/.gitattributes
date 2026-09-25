@@ -1,0 +1,6 @@
+# Preserve fixture bytes, including intentional CRLF and embedded newlines.
+data/*.csv -text
+data/edge-cases.csv -whitespace
+
+# Preserve the caption file's intentional blank cue separators.
+media/captions.vtt -text -whitespace

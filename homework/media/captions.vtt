@@ -1,0 +1,82 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:15.600
+This is one reference example of Evidence Before Action. Your layout can differ. What matters is a clear, trustworthy workflow: import, explore, and export. The handout and data contract define the requirements.
+
+2
+00:00:15.600 --> 00:00:28.960
+Start with a labeled file picker. Download stays disabled until data loads. Do not add login, an application backend, or saved browser data; a static dev or preview server is fine.
+
+3
+00:00:28.960 --> 00:00:41.640
+Choose campus tickets from your computer. The app identifies the active file and reports accepted and rejected records. These records are synthetic, not real campus data.
+
+4
+00:00:41.640 --> 00:00:54.360
+The summary shows matching tickets, open tickets, overdue work, known hours, and estimate coverage. The zone table uses the same matching records and fixed reference date.
+
+5
+00:00:54.360 --> 00:01:06.440
+Filters work together. Selecting South and Open updates the table and every summary together. This is not a static dashboard with independently hardcoded numbers.
+
+6
+00:01:06.440 --> 00:01:19.160
+Here, only fourteen of thirty-three open tickets have estimates. Seventy-two known hours is not the total workload. Missing estimates must remain visible, not become zero.
+
+7
+00:01:19.160 --> 00:01:31.960
+Text search is case insensitive and combines with the zone and status filters. Search ticket identifiers or summaries; all displayed metrics must follow those same matches.
+
+8
+00:01:31.960 --> 00:01:44.840
+Switch between oldest opening first and highest estimate first. Sorting changes order, not membership or totals. In descending estimate order, unknown estimates belong last.
+
+9
+00:01:44.840 --> 00:01:56.720
+Resetting filters restores the full dataset and preserves the sort. Previous and Next show fifty rows at a time. Summaries still describe all matching records.
+
+10
+00:01:56.720 --> 00:02:08.160
+A search with no matches should show a useful empty message and a way to reset filters. Zero results must not produce broken controls or invalid numbers.
+
+11
+00:02:08.160 --> 00:02:20.840
+A file with an invalid header produces a clear error, without replacing the active dataset. Show the failed attempt separately from the file that is still being analyzed.
+
+12
+00:02:20.840 --> 00:02:33.280
+This edge-case file contains both usable and rejected records. Load the valid subset and explain the rejected records. Do not silently fix or discard troublesome data.
+
+13
+00:02:33.280 --> 00:02:45.800
+Each rejection identifies a logical record and a reason. Here you can see an impossible date and a duplicate. An invalid earlier record must not reserve its identifier.
+
+14
+00:02:45.800 --> 00:02:58.520
+Quoted commas and newlines remain part of a field. Markup-looking summaries are displayed literally. Unknown and zero estimates remain distinct in the actual records, too.
+
+15
+00:02:58.520 --> 00:03:10.600
+Now return to the full dataset and download the analysis while viewing page two. The file must contain all two hundred forty matches, not just fifty visible rows.
+
+16
+00:03:10.600 --> 00:03:22.200
+The JSON records the source, filters, sort, metrics, zone summaries, and matching rows. This excerpt is a video aid; an in-app JSON viewer is not required.
+
+17
+00:03:22.200 --> 00:03:34.560
+After the app assets load, turn networking off. Local file import, filtering, and export must still work. This does not require an offline reload or a service worker.
+
+18
+00:03:34.560 --> 00:03:47.080
+At a narrow width, controls stack and tables scroll within their own region. Keyboard focus must stay visible. Also check contrast and two hundred percent browser zoom.
+
+19
+00:03:47.080 --> 00:04:04.440
+Submit source, lockfile, setup instructions, three tests with fixtures, analysis JSON, and a screenshot. Limit EVIDENCE.md to 800 words, including a 100-150 word recommendation. Small numeric/check tables do not count toward that limit.
+
+20
+00:04:04.440 --> 00:04:20.240
+Make your independent prediction before implementation. Keep one meaningful Copilot decision, a real ten-minute peer tryout, and the five-minute individual check. This video does not replace those human activities.
+
