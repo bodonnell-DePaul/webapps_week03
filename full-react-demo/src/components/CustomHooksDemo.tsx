@@ -37,7 +37,7 @@ const CustomHooksDemo: React.FC = () => {
       <h2>6. Custom Hooks</h2>
 
       {/* useLocalStorage */}
-      <section className="demo-card">
+      <section id="hooks-storage" className="demo-card">
         <h3>useLocalStorage — Persistent State</h3>
         <p className="explanation">
           Type your name, then <strong>refresh the page</strong>. The value
@@ -76,7 +76,7 @@ const CustomHooksDemo: React.FC = () => {
       </section>
 
       {/* useWindowDimensions */}
-      <section className="demo-card">
+      <section id="hooks-dimensions" className="demo-card">
         <h3>useWindowDimensions — Responsive Hook</h3>
         <p>
           Width: <strong>{width}px</strong> | Height: <strong>{height}px</strong>
@@ -96,7 +96,7 @@ const CustomHooksDemo: React.FC = () => {
       </section>
 
       {/* useFetch with bundled data served by Vite */}
-      <section className="demo-card">
+      <section id="hooks-fetch" className="demo-card">
         <h3>useFetch&lt;T&gt; — Generic Data Fetching</h3>
         <p className="explanation">
           The <code>useFetch</code> hook (in <code>hooks/useFetch.ts</code>)

@@ -167,9 +167,9 @@ const StateDemo: React.FC = () => {
     <div>
       <h2>3. State (useState Hook)</h2>
 
-      <section className="demo-card"><Counter /></section>
-      <section className="demo-card"><ArrayState /></section>
-      <section className="demo-card"><FormState /></section>
+      <section id="state-counter" className="demo-card"><Counter /></section>
+      <section id="state-arrays" className="demo-card"><ArrayState /></section>
+      <section id="state-form" className="demo-card"><FormState /></section>
 
       <section className="demo-card without-card">
         <h3>⚠️ What Would Happen Without These Features?</h3>

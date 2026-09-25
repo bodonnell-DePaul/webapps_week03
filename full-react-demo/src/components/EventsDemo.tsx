@@ -67,7 +67,7 @@ const EventsDemo: React.FC = () => {
       <h2>4. Event Handling</h2>
 
       {/* Mouse events */}
-      <section className="demo-card">
+      <section id="events-mouse" className="demo-card">
         <h3>Mouse Events</h3>
         <div className="flex-row">
           <button className="btn btn-primary" onClick={handleClick}>
@@ -80,7 +80,7 @@ const EventsDemo: React.FC = () => {
       </section>
 
       {/* Keyboard events */}
-      <section className="demo-card">
+      <section id="events-keyboard" className="demo-card">
         <h3>Keyboard Events</h3>
         <input
           type="text"
@@ -91,7 +91,7 @@ const EventsDemo: React.FC = () => {
       </section>
 
       {/* Form with preventDefault */}
-      <section className="demo-card">
+      <section id="events-form" className="demo-card">
         <h3>Form Submit &amp; preventDefault()</h3>
         <form onSubmit={handleFormSubmit}>
           <div className="flex-row">
@@ -107,7 +107,7 @@ const EventsDemo: React.FC = () => {
       </section>
 
       {/* preventDefault examples */}
-      <section className="demo-card">
+      <section id="events-prevent-default" className="demo-card">
         <h3>Other preventDefault() Uses</h3>
         <div className="flex-row" style={{ alignItems: 'center' }}>
           <a href="https://example.com" onClick={handleLinkClick} style={{ marginRight: 16 }}>
@@ -129,7 +129,7 @@ const EventsDemo: React.FC = () => {
       </section>
 
       {/* Event log */}
-      <section className="demo-card">
+      <section id="events-event-log" className="demo-card">
         <h3>Event Log</h3>
         <div className="log-box" style={{ maxHeight: 200, overflowY: 'auto' }}>
           {logs.length === 0

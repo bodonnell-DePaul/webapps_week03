@@ -3,6 +3,40 @@
 
 ---
 
+## Lecture Slides
+
+The lecture is available in two matching formats, both organized around **`full-react-demo`**:
+
+- [HTML slides](slides/index.html): open the downloaded file directly in a browser; no server, installation, or internet connection is needed to present it.
+- [PowerPoint slides](slides/week-2-react-typescript.pptx): editable text, code, diagrams, and instructor notes.
+
+Every slide follows **concept -> source -> running example** in the maintained app. It has a Source link, a Live link to a specific topic and example, and instructor notes describing what to do and what students should observe. Prediction questions and proposed improvements are identified as comparisons rather than presented as the app's existing behavior.
+
+The Source view shows the exact local component or hook captured when the deck was built, with its filename and selected line range. From that view, **Run this example** opens the corresponding app section. The snapshot works offline; the optional GitHub file link opens the published copy, which may differ from local edits. Edit the actual app file, then rebuild the deck to refresh the source snapshot and line references.
+
+In the HTML version, use the arrow keys or Space to advance, Home/End to jump to the first/last slide, **C** for Source, **D** for the live demo, **N** to toggle notes, and **F** for fullscreen. **HTML notes are visible to the audience when displayed**; use PowerPoint's Presenter View for private notes. The Print button prints one slide per page.
+
+Before class, start the [app](#full-interactive-demo) on port 5176. For PowerPoint's Source links, also serve the HTML deck from the repository root in another terminal:
+
+```sh
+python -m http.server 8765 --bind 127.0.0.1 --directory slides
+```
+
+Open **http://127.0.0.1:8765/** for the browser presentation. PowerPoint's Source links open the same source viewer; its Live links open the running app directly. Neither link depends on the retired sample applications.
+
+To revise both versions together, edit `slides/deck.mjs`, then regenerate them:
+
+```sh
+cd slides
+npm ci
+npm test
+npm run build
+```
+
+The generator reads the real app files and validates each route, section ID and source selector. `slides/build.mjs`, `slides/theme.css`, and `slides/player.js` control the shared layout and source viewer. `full-react-demo/src/demo-topics.json` is the shared topic/section registry. Optional `LECTURE_APP_URL` and `LECTURE_SLIDES_URL` environment variables change the base URLs when rebuilding. Supplemental hardened hook examples in `slides/reference-examples.mjs` are teaching comparisons, not the app's runtime implementations.
+
+---
+
 ## Full Interactive Demo
 
 **`full-react-demo` is the maintained classroom sample for this repository.**

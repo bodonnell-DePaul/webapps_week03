@@ -61,7 +61,7 @@ const EffectDemo: React.FC = () => {
       <h2>5. useEffect Hook (Side Effects)</h2>
 
       {/* Runs on every render */}
-      <section className="demo-card">
+      <section id="effects-every-render" className="demo-card">
         <h3>Effect — Every Render (no deps)</h3>
         <p>This effect has run <strong ref={effectCountElement}>0</strong> times.</p>
         <p className="explanation">
@@ -73,7 +73,7 @@ const EffectDemo: React.FC = () => {
       </section>
 
       {/* Runs when count changes */}
-      <section className="demo-card">
+      <section id="effects-dependencies" className="demo-card">
         <h3>Effect — Dependency Array [count]</h3>
         <p>Count: <strong>{count}</strong></p>
         <div className="flex-row">
@@ -87,7 +87,7 @@ const EffectDemo: React.FC = () => {
       </section>
 
       {/* Window resize with cleanup */}
-      <section className="demo-card">
+      <section id="effects-resize" className="demo-card">
         <h3>Effect — Resize Listener with Cleanup</h3>
         <p>Window width: <strong>{windowWidth}px</strong></p>
         <p className="explanation">
@@ -98,7 +98,7 @@ const EffectDemo: React.FC = () => {
       </section>
 
       {/* Timer with cleanup */}
-      <section className="demo-card">
+      <section id="effects-timer" className="demo-card">
         <h3>Effect — Interval Timer with Cleanup</h3>
         <p className="big-number">{seconds}s</p>
         <div className="flex-row">

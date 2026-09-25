@@ -58,7 +58,7 @@ const ComponentsDemo: React.FC = () => {
       <h2>1. Components &amp; TSX Fundamentals</h2>
 
       {/* --- Curly-brace expressions --- */}
-      <section className="demo-card">
+      <section id="components-expressions" className="demo-card">
         <h3>Curly Braces — Embedding TypeScript in TSX</h3>
         <p><strong>Variable:</strong> Welcome, {userName}!</p>
         <p><strong>Number:</strong> Age is {userAge}</p>
@@ -69,7 +69,7 @@ const ComponentsDemo: React.FC = () => {
       </section>
 
       {/* --- Component composition --- */}
-      <section className="demo-card">
+      <section id="components-composition" className="demo-card">
         <h3>Component Composition</h3>
         <p className="explanation">
           <code>&lt;Header /&gt;</code> and <code>&lt;Footer /&gt;</code> are
@@ -83,7 +83,7 @@ const ComponentsDemo: React.FC = () => {
       </section>
 
       {/* --- Array rendering with .map() --- */}
-      <section className="demo-card">
+      <section id="components-lists" className="demo-card">
         <h3>Array Rendering with .map() &amp; key</h3>
         <ul>
           {items.map((item, index) => (
@@ -94,7 +94,7 @@ const ComponentsDemo: React.FC = () => {
       </section>
 
       {/* --- Fragment demo --- */}
-      <section className="demo-card">
+      <section id="components-fragments" className="demo-card">
         <h3>React Fragments &lt;&gt;...&lt;/&gt;</h3>
         <p className="explanation">
           Fragments let you group elements without adding an extra DOM node.

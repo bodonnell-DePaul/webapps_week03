@@ -30,6 +30,32 @@ The authentication controls simulate roles for teaching; they are not
 production authentication. The Props section's Edit/Delete buttons deliberately
 log callback events rather than implement user-management operations.
 
+## Lecture deep links
+
+The slides use `#/<topic>/<example>` links to select a topic and scroll to the
+matching demonstration card. That card is outlined and keyboard-focused.
+Reloading a link preserves its destination, and browser Back/Forward follows
+topic changes.
+
+| Topic | Source component | Example URL fragment |
+| --- | --- | --- |
+| Components and TSX | `src/components/ComponentsDemo.tsx` | `#/components/expressions` |
+| Props | `src/components/PropsDemo.tsx` | `#/props/callbacks` |
+| State | `src/components/StateDemo.tsx` | `#/state/counter` |
+| Events | `src/components/EventsDemo.tsx` | `#/events/form` |
+| Effects | `src/components/EffectDemo.tsx` | `#/effects/timer` |
+| Custom hooks | `src/components/CustomHooksDemo.tsx` | `#/hooks/fetch` |
+| Context | `src/components/ContextDemo.tsx` | `#/context/auth` |
+| Performance | `src/components/PerformanceDemo.tsx` | `#/performance/memo-child` |
+| useMemo | `src/components/UseMemoDemo.tsx` | `#/usememo/products` |
+| useReducer | `src/components/UseReducerDemo.tsx` | `#/usereducer/cart` |
+
+For example, open **http://127.0.0.1:5176/#/state/counter** directly from a slide.
+The complete example registry is `src/demo-topics.json`; each entry matches a
+section ID in its component. `npm test` checks route parsing and those source
+anchors using Node's built-in test runner. Keep the registry, section IDs, and
+the slide's `demo` mapping aligned when adding examples.
+
 ## Source and local adjustments
 
 Imported from
@@ -45,6 +71,8 @@ Local compatibility and functional fixes:
 - Make the fetching example interactive using a bundled users fixture with
   loading, success, and error states.
 - Give the browser tab a descriptive title.
+- Add lecture deep links for every topic and example, including browser history
+  and accessible focus on the selected demonstration.
 
 The original Vite template documentation follows.
 

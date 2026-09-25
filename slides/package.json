@@ -1,0 +1,14 @@
+{
+  "name": "webdev-week2-lecture",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Matching offline HTML and editable PowerPoint slides for the React and TypeScript lecture.",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test demo-links.test.mjs"
+  },
+  "devDependencies": {
+    "pptxgenjs": "4.0.1"
+  }
+}

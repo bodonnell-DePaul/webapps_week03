@@ -1,0 +1,94 @@
+{
+  "components": {
+    "label": "1. Components & TSX",
+    "file": "src/components/ComponentsDemo.tsx",
+    "examples": {
+      "expressions": "TSX expressions",
+      "composition": "Component composition",
+      "lists": "Lists and keys",
+      "fragments": "Fragments"
+    }
+  },
+  "props": {
+    "label": "2. Props",
+    "file": "src/components/PropsDemo.tsx",
+    "examples": {
+      "defaults": "Greeting defaults",
+      "callbacks": "Callback props",
+      "generic-list": "GenericList"
+    }
+  },
+  "state": {
+    "label": "3. State",
+    "file": "src/components/StateDemo.tsx",
+    "examples": {
+      "counter": "Counter",
+      "arrays": "Array state",
+      "form": "Registration form"
+    }
+  },
+  "events": {
+    "label": "4. Events",
+    "file": "src/components/EventsDemo.tsx",
+    "examples": {
+      "mouse": "Mouse events",
+      "keyboard": "Keyboard events",
+      "form": "Form submission",
+      "prevent-default": "Browser defaults",
+      "event-log": "Event log"
+    }
+  },
+  "effects": {
+    "label": "5. useEffect",
+    "file": "src/components/EffectDemo.tsx",
+    "examples": {
+      "every-render": "Effect executions",
+      "dependencies": "Document title",
+      "resize": "Resize listener",
+      "timer": "Interval timer"
+    }
+  },
+  "hooks": {
+    "label": "6. Custom Hooks",
+    "file": "src/components/CustomHooksDemo.tsx",
+    "examples": {
+      "storage": "Persistent state",
+      "dimensions": "Window dimensions",
+      "fetch": "Fetching users"
+    }
+  },
+  "context": {
+    "label": "7. Context API",
+    "file": "src/components/ContextDemo.tsx",
+    "examples": {
+      "auth": "Demo authentication",
+      "theme": "Theme",
+      "notifications": "Notifications"
+    }
+  },
+  "performance": {
+    "label": "8. Performance",
+    "file": "src/components/PerformanceDemo.tsx",
+    "examples": {
+      "memo-child": "Memoized child",
+      "calculation": "Cached calculation"
+    }
+  },
+  "usememo": {
+    "label": "9. useMemo",
+    "file": "src/components/UseMemoDemo.tsx",
+    "examples": {
+      "fibonacci": "Fibonacci",
+      "products": "Product filters"
+    }
+  },
+  "usereducer": {
+    "label": "10. useReducer",
+    "file": "src/components/UseReducerDemo.tsx",
+    "examples": {
+      "overview": "Reducer actions",
+      "catalog": "Product catalog",
+      "cart": "Shopping cart"
+    }
+  }
+}
